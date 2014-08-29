@@ -1,14 +1,14 @@
-# passport-oauth2
+# passport-concur
 
-[![Build](https://travis-ci.org/jaredhanson/passport-oauth2.png)](https://travis-ci.org/jaredhanson/passport-oauth2)
-[![Coverage](https://coveralls.io/repos/jaredhanson/passport-oauth2/badge.png)](https://coveralls.io/r/jaredhanson/passport-oauth2)
-[![Quality](https://codeclimate.com/github/jaredhanson/passport-oauth2.png)](https://codeclimate.com/github/jaredhanson/passport-oauth2)
-[![Dependencies](https://david-dm.org/jaredhanson/passport-oauth2.png)](https://david-dm.org/jaredhanson/passport-oauth2)
+[![Build](https://travis-ci.org/outrightmental/passport-concur.png)](https://travis-ci.org/outrightmental/passport-concur)
+[![Coverage](https://coveralls.io/repos/outrightmental/passport-concur/badge.png)](https://coveralls.io/r/outrightmental/passport-concur)
+[![Quality](https://codeclimate.com/github/outrightmental/passport-concur.png)](https://codeclimate.com/github/outrightmental/passport-concur)
+[![Dependencies](https://david-dm.org/outrightmental/passport-concur.png)](https://david-dm.org/outrightmental/passport-concur)
 [![Tips](http://img.shields.io/gittip/jaredhanson.png)](https://www.gittip.com/jaredhanson/)
 
-General-purpose OAuth 2.0 authentication strategy for [Passport](http://passportjs.org/).
+An OAuth 2.0 connector for the [Concur API](https://developer.concur.com/api-documentation), adapted from Jared Hanson's original [passport-oauth2](https://github.com/jaredhanson/passport-oauth2), a general-purpose OAuth 2.0 authentication strategy for [Passport](http://passportjs.org/).
 
-This module lets you authenticate using OAuth 2.0 in your Node.js applications.
+This module lets you authenticate using the Concur API via OAuth 2.0 in your Node.js applications.
 By plugging into Passport, OAuth 2.0 authentication can be easily and
 unobtrusively integrated into any application or framework that supports
 [Connect](http://www.senchalabs.org/connect/)-style middleware, including
@@ -20,14 +20,9 @@ configuration, and accommodates any provider-specific quirks.  See the
 [list](https://github.com/jaredhanson/passport/wiki/Strategies) for supported
 providers.
 
-Developers who need to implement authentication against an OAuth 2.0 provider
-that is not already supported are encouraged to sub-class this strategy.  If you
-choose to open source the new provider-specific strategy, please add it to the
-list so other people can find it.
-
 ## Install
 
-    $ npm install passport-oauth2
+    $ npm install passport-concur
 
 ## Usage
 
@@ -39,7 +34,7 @@ the client identifer and secret, are specified as options.  The strategy
 requires a `verify` callback, which receives an access token and profile,
 and calls `done` providing a user.
 
-    passport.use(new OAuth2Strategy({
+    passport.use(new ConcurStrategy({
         authorizationURL: 'https://www.example.com/oauth2/authorize',
         tokenURL: 'https://www.example.com/oauth2/token',
         clientID: EXAMPLE_CLIENT_ID,
@@ -73,6 +68,7 @@ application:
 
 ## Related Modules
 
+- [passport-oauth2](https://github.com/jaredhanson/passport-oauth2) — OAuth 2.0 authentication strategy
 - [passport-oauth1](https://github.com/jaredhanson/passport-oauth1) — OAuth 1.0 authentication strategy
 - [passport-http-bearer](https://github.com/jaredhanson/passport-http-bearer) — Bearer token authentication strategy for APIs
 - [OAuth2orize](https://github.com/jaredhanson/oauth2orize) — OAuth 2.0 authorization server toolkit
@@ -84,6 +80,7 @@ application:
 
 ## Credits
 
+  - [Nick Kaye](http://github.com/nickckaye)
   - [Jared Hanson](http://github.com/jaredhanson)
 
 ## License
